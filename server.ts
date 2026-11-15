@@ -490,9 +490,10 @@ app.post('/api/joshpdf/quiz', async (req, res) => {
 // Vite / Static Frontend Serving
 async function startServer() {
   const distPath = path.join(__dirname, 'dist');
+  const runningUnderTsx = process.execArgv.some((arg) => arg.includes('tsx'));
   const useProductionStatic =
     process.env.NODE_ENV === 'production' ||
-    (process.env.npm_lifecycle_event === 'start' && fs.existsSync(distPath));
+    (!runningUnderTsx && process.env.NODE_ENV !== 'development' && fs.existsSync(distPath));
 
   if (!useProductionStatic) {
     const { createServer: createViteServer } = await import('vite');
