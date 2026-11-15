@@ -1,0 +1,6 @@
+{
+  "name": "JOSH PDF",
+  "description": "Upload. Understand. Learn Faster. Free AI-Powered PDF Summarizer with Document Q&A, Quiz Generation, Tamil-English Support, and PDF Exports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
